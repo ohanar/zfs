@@ -326,6 +326,7 @@ line_worker(char *line, const char *cachefile)
 			    "SourcePath=" FSLIST "/%s\n"
 			    "Documentation=man:zfs-mount-generator(8)\n"
 			    "DefaultDependencies=no\n"
+			    "IgnoreOnIsolate=yes\n"
 			    "Wants=%s\n"
 			    "After=%s\n",
 			    dataset, cachefile, wants, after);

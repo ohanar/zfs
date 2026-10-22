@@ -23,7 +23,7 @@
 .\" OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 .\" WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 .\"
-.Dd November 30, 2021
+.Dd October 22, 2026
 .Dt ZFS-MOUNT-GENERATOR 8
 .Os
 .
@@ -81,6 +81,13 @@ The service also uses the same
 .Sy Requires Ns = , No and
 .Sy RequiresMountsFor Ns = ,
 as the mount unit.
+.
+The service has
+.Sy IgnoreOnIsolate Ns = Ns Sy yes ,
+as mount units have by default,
+so that
+.Nm systemctl Cm isolate
+doesn't unmount the datasets and unload the key.
 .
 .It Sy org.openzfs.systemd:requires Ns = Ns Pa path Ns Oo " " Ns Pa path Oc Ns …
 .No Sets Sy Requires Ns = for the mount- and key-loading unit.
